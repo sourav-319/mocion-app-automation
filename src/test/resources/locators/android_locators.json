@@ -1,0 +1,27 @@
+{
+  "login_screen": {
+    "email_field": "ui:new UiSelector().className(\"android.widget.EditText\").instance(0)",
+    "password_field": "ui:new UiSelector().className(\"android.widget.EditText\").instance(1)",
+    "next_button": "ui:new UiSelector().description(\"Next\")"
+  },
+  "home_screen": {
+    "select_match": "ui:new UiSelector().description(\"Match\")"
+  },
+  "booking_screen": {
+    "book_now_button": "ui:new UiSelector().description(\"Book Now\").instance(0)",
+    "select_date": "ui:new UiSelector().description(\"Monday, June 30, 2025\")",
+    "select_time": "ui:new UiSelector().description(\"12:00\")",
+    "court_dropdown": "ui:new UiSelector().className(\"android.widget.Button\")",
+    "select_price": "xpath://android.view.View[contains(@content-desc, '30 AED')]"
+  },
+  "booking_details_screen": {
+    "confirm_payment_button": "ui:new UiSelector().description(\"Confirm Total Payment 7.76 AED\")"
+  },
+  "payment_screen": {
+    "card_number_field": "ui:new UiSelector().resourceId(\"creditCardNumber\")",
+    "cvv_number_field": "ui:new UiSelector().resourceId(\"cardCVV\")",
+    "make_payment_button": "ui:new UiSelector().text(\"Make payment\")",
+    "accept_payment_button": "ui:new UiSelector().text(\"Accept\")",
+    "payment_successful_locator": "ui:new UiSelector().description(\"Payment Successful\")"
+  }
+}
