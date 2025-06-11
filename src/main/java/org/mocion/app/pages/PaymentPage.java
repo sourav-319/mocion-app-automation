@@ -21,18 +21,19 @@ public class PaymentPage extends BasePage {
     public PaymentPage fillCardNumber() {
         click(PaymentPage.PAYMENT_SCREEN, "card_number_field");
         type(PAYMENT_SCREEN, "card_number_field", "4111 1111 1111 1111");
+        ((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.BACK));
         return this;
     }
 
     public PaymentPage fillCVVNumber() {
         click(PAYMENT_SCREEN, "cvv_number_field");
         type(PAYMENT_SCREEN, "cvv_number_field", "123");
+        ((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.BACK));
         return this;
     }
 
     public PaymentPage clickMakePaymentButton() {
         click(PAYMENT_SCREEN, "make_payment_button");
-        ((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.ENTER));
         return this;
     }
 
