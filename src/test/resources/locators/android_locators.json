@@ -9,7 +9,7 @@
   },
   "booking_screen": {
     "book_now_button": "ui:new UiSelector().description(\"Book Now\").instance(0)",
-    "select_date": "ui:new UiSelector().description(\"Monday, June 30, 2025\")",
+    "select_date": "ui:new UiSelector().description(\"Monday, June 28, 2025\")",
     "select_time": "ui:new UiSelector().description(\"12:00\")",
     "court_dropdown": "ui:new UiSelector().className(\"android.widget.Button\")",
     "select_price": "xpath://android.view.View[contains(@content-desc, '30 AED')]"
