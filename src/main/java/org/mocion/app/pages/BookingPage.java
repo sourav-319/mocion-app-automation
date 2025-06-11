@@ -15,7 +15,7 @@ public class BookingPage extends BasePage {
     }
 
     public BookingPage selectBookingDate() {
-        scrollUntilVisible(BOOKING_SCREEN, "booking_date");
+        scrollUntilVisible(BOOKING_SCREEN, "select_date");
         click(BOOKING_SCREEN, "select_date");
         return this;
     }
