@@ -63,6 +63,13 @@ public class BasePage {
         }
 
         String locator = screenLocators.get(element).getAsString();
+
+        // Replace {{TODAY}} with current date
+        if (locator.contains("{{TODAY}}")) {
+            String today = new java.text.SimpleDateFormat("EEEE, MMMM d, yyyy").format(new java.util.Date());
+            locator = locator.replace("{{TODAY}}", today);
+        }
+
         String[] parts = locator.split(":", 2);
         if (parts.length < 2) {
             throw new IllegalArgumentException("Invalid locator format: " + locator);
