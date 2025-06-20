@@ -40,6 +40,7 @@ public class AppiumServerManager {
         } else {
             logger.warn("Appium Server is not running.");
         }
+
         // Cleanup or delete the log file if needed (ensure no other process is locking it)
         File logFile = new File("logs/appium_4723.log");
         if (logFile.exists()) {
