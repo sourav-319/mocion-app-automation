@@ -24,12 +24,6 @@ public class BasePage {
         locators = LocatorManager.getLocators();
     }
 
-    /**
-     * Constructs a new BasePage instance.
-     *
-     * @param driver The AppiumDriver instance to use for interacting with the app.
-     * @throws RuntimeException If the locator file cannot be found or loaded.
-     */
     public BasePage(AppiumDriver driver) {
         this.driver = driver;
     }
@@ -44,14 +38,6 @@ public class BasePage {
         webElement.sendKeys(value);
     }
 
-    /**
-     * Retrieves the locator for a given screen and element.
-     *
-     * @param screen  The screen name where the element is located.
-     * @param element The element name to find.
-     * @return The locator for the specified element.
-     * @throws IllegalArgumentException If the screen or element is not found, or if the locator format is invalid.
-     */
     protected By getLocator(String screen, String element) {
         if (!locators.has(screen)) {
             throw new IllegalArgumentException("Screen '" + screen + "' not found in locators file.");
@@ -88,24 +74,11 @@ public class BasePage {
         };
     }
 
-    /**
-     * Waits for a web element to be visible on the screen.
-     *
-     * @param locator The locator of the web element to wait for.
-     * @return The located WebElement once it is visible.
-     */
     private WebElement waitForElement(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(FrameworkConstant.WAIT_STRATEGY));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    /**
-     * Finds a web element on the screen by its locator.
-     *
-     * @param screen  The screen name where the element is located.
-     * @param element The element name to find.
-     * @return The located WebElement.
-     */
     protected WebElement findElement(String screen, String element) {
         if (element.equals("add_menu")) {
             System.out.println(screen + " " + element);

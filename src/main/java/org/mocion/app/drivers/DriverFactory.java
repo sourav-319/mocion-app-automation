@@ -28,11 +28,6 @@ public class DriverFactory {
     private DriverFactory() {
     }
 
-    /**
-     * Initializes the AppiumDriver based on the specified platform type.
-     *
-     * @param platform The platform type (ANDROID or IOS).
-     */
     public static void initializeDriver(PlatformType platform) {
         DesiredCapabilities caps = new DesiredCapabilities();
 
