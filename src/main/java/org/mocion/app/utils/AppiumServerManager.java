@@ -32,7 +32,6 @@ public class AppiumServerManager {
         logger.info("Appium Server started on: {}", getServerUrl());
     }
 
-
     public static void stopServer() {
         if (service != null && service.isRunning()) {
             service.stop();
