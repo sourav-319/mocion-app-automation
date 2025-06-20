@@ -8,8 +8,6 @@ import org.mocion.app.exceptions.FileNotFoundException;
 
 import java.io.File;
 import java.io.FileReader;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import static org.mocion.app.drivers.DriverFactory.getDriver;
 
@@ -59,22 +57,5 @@ public class LocatorManager {
         } catch (Exception e) {
             throw new CustomRuntimeException("Failed to load locators: " + e.getMessage(), e);
         }
-    }
-
-    public static String getDynamicLocator(String screen, String key) {
-        JsonObject screenLocators = locators.getAsJsonObject(screen);
-        if (screenLocators == null || !screenLocators.has(key)) {
-            throw new RuntimeException("Locator not found for screen: " + screen + ", key: " + key);
-        }
-
-        String locatorValue = screenLocators.get(key).getAsString();
-
-        // Replace {{TODAY}} with current date
-        if (locatorValue.contains("{{TODAY}}")) {
-            String today = new SimpleDateFormat("EEEE, MMMM d, yyyy").format(new Date());
-            locatorValue = locatorValue.replace("{{TODAY}}", today);
-        }
-
-        return locatorValue;
     }
 }

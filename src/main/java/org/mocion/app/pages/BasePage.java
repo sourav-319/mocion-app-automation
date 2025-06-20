@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.Arrays;
+import java.util.List;
 
 public class BasePage {
     protected AppiumDriver driver;
@@ -156,7 +156,7 @@ public class BasePage {
                     PointerInput.Origin.viewport(), startX, endY));
             scroll.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 
-            driver.perform(Arrays.asList(scroll));
+            driver.perform(List.of(scroll));
 
             attempt++;
         }
