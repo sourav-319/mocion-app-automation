@@ -103,39 +103,30 @@ public class BasePage {
         int maxScrolls = 5;
         int attempt = 0;
 
+        int screenHeight = driver.manage().window().getSize().height;
+        int screenWidth = driver.manage().window().getSize().width;
+        int startX = screenWidth / 2;
+
         while (attempt < maxScrolls) {
+            boolean elementVisible = false;
             try {
                 WebElement targetElement = driver.findElement(getLocator(screen, element));
                 if (targetElement.isDisplayed()) {
-                    int screenHeight = driver.manage().window().getSize().height;
-                    int screenWidth = driver.manage().window().getSize().width;
-
-                    int startX = screenWidth / 2;
-                    int startY = (int) (screenHeight * 0.6);
-                    int endY = (int) (screenHeight * 0.4);
-
-                    PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
-                    Sequence shortScroll = new Sequence(finger, 1);
-
-                    shortScroll.addAction(finger.createPointerMove(Duration.ofMillis(0),
-                            PointerInput.Origin.viewport(), startX, startY));
-                    shortScroll.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-                    shortScroll.addAction(finger.createPointerMove(Duration.ofMillis(300),
-                            PointerInput.Origin.viewport(), startX, endY));
-                    shortScroll.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
-
-                    driver.perform(List.of(shortScroll));
-                    return;
+                    elementVisible = true;
                 }
             } catch (NoSuchElementException ignored) {
             }
 
-            int screenHeight = driver.manage().window().getSize().height;
-            int screenWidth = driver.manage().window().getSize().width;
-
-            int startX = screenWidth / 2;
-            int startY = (int) (screenHeight * 0.8);
-            int endY = (int) (screenHeight * 0.2);
+            int startY, endY, duration;
+            if (elementVisible) {
+                startY = (int) (screenHeight * 0.6);
+                endY = (int) (screenHeight * 0.4);
+                duration = 300;
+            } else {
+                startY = (int) (screenHeight * 0.8);
+                endY = (int) (screenHeight * 0.2);
+                duration = 800;
+            }
 
             PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
             Sequence scroll = new Sequence(finger, 1);
@@ -143,11 +134,15 @@ public class BasePage {
             scroll.addAction(finger.createPointerMove(Duration.ofMillis(0),
                     PointerInput.Origin.viewport(), startX, startY));
             scroll.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-            scroll.addAction(finger.createPointerMove(Duration.ofMillis(800),
+            scroll.addAction(finger.createPointerMove(Duration.ofMillis(duration),
                     PointerInput.Origin.viewport(), startX, endY));
             scroll.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 
             driver.perform(List.of(scroll));
+
+            if (elementVisible) {
+                return;
+            }
 
             try {
                 Thread.sleep(500);
@@ -157,6 +152,5 @@ public class BasePage {
 
             attempt++;
         }
-
     }
 }
