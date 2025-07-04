@@ -24,7 +24,7 @@ public class TournamentsTest extends BaseTest {
     }
 
     @Test(description = "Public competitive knockout tournament booking create should successful")
-    public void verify_public_competitive_knockout_tournament_booking_create_should_succeed() throws InterruptedException {
+    public void verify_public_competitive_knockout_tournament_booking_create_should_succeed() {
         String searchKeyword = "test_tournament_002";
 
         initPages();
@@ -49,7 +49,7 @@ public class TournamentsTest extends BaseTest {
     }
 
     @Test(description = "Public Friendly knockout tournament booking create should successful")
-    public void verify_public_friendly_knockout_tournament_booking_create_should_succeed() throws InterruptedException {
+    public void verify_public_friendly_knockout_tournament_booking_create_should_succeed() {
         String searchKeyword = "test_tournament_002";
 
         initPages();

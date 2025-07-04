@@ -22,7 +22,7 @@ public class BookingTest extends BaseTest {
     }
 
     @Test(description = "Friendly public Match booking create should successful")
-    public void verify_friendly_public_match_booking_create_should_succeed() throws InterruptedException {
+    public void verify_friendly_public_match_booking_create_should_succeed() {
         String searchKeyword = "Club 1";
 
         initPages();
@@ -51,7 +51,7 @@ public class BookingTest extends BaseTest {
     }
 
     @Test(description = "Competitive public Match booking create should successful")
-    public void verify_competitive_public_match_booking_create_should_succeed() throws InterruptedException {
+    public void verify_competitive_public_match_booking_create_should_succeed() {
         String searchKeyword = "Club 1";
 
         initPages();
@@ -80,7 +80,7 @@ public class BookingTest extends BaseTest {
     }
 
     @Test(description = "Friendly private Match booking create should successful")
-    public void verify_friendly_private_match_booking_create_should_succeed() throws InterruptedException {
+    public void verify_friendly_private_match_booking_create_should_succeed() {
         String searchKeyword = "Club 1";
 
         initPages();
@@ -109,7 +109,7 @@ public class BookingTest extends BaseTest {
     }
 
     @Test(description = "Competitive private Match booking create should successful")
-    public void verify_competitive_private_match_booking_create_should_succeed() throws InterruptedException {
+    public void verify_competitive_private_match_booking_create_should_succeed() {
         String searchKeyword = "Club 1";
 
         initPages();
