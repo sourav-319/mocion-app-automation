@@ -48,7 +48,7 @@ public class TournamentsTest extends BaseTest {
         Assert.assertTrue(successElement.isDisplayed());
     }
 
-    @Test(description = "Public Friendly knockout tournament booking create should successful")
+    @Test(description = "Public friendly knockout tournament booking create should successful")
     public void verify_public_friendly_knockout_tournament_booking_create_should_succeed() {
         String searchKeyword = "test_tournament_002";
 
