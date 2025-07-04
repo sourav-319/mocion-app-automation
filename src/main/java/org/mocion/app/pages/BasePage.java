@@ -6,6 +6,7 @@ import io.appium.java_client.AppiumDriver;
 import org.mocion.app.constants.FrameworkConstant;
 import org.mocion.app.utils.LocatorManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
@@ -102,22 +103,30 @@ public class BasePage {
         int maxScrolls = 5;
         int attempt = 0;
 
+        int screenHeight = driver.manage().window().getSize().height;
+        int screenWidth = driver.manage().window().getSize().width;
+        int startX = screenWidth / 2;
+
         while (attempt < maxScrolls) {
+            boolean elementVisible = false;
             try {
                 WebElement targetElement = driver.findElement(getLocator(screen, element));
                 if (targetElement.isDisplayed()) {
-                    break;
+                    elementVisible = true;
                 }
-            } catch (Exception ignored) {
-                // Not visible, keep scrolling
+            } catch (NoSuchElementException ignored) {
             }
 
-            int screenHeight = driver.manage().window().getSize().height;
-            int screenWidth = driver.manage().window().getSize().width;
-
-            int startX = screenWidth / 2;
-            int startY = (int) (screenHeight * 0.8); // bottom
-            int endY = (int) (screenHeight * 0.2);   // top
+            int startY, endY, duration;
+            if (elementVisible) {
+                startY = (int) (screenHeight * 0.6);
+                endY = (int) (screenHeight * 0.4);
+                duration = 300;
+            } else {
+                startY = (int) (screenHeight * 0.8);
+                endY = (int) (screenHeight * 0.2);
+                duration = 800;
+            }
 
             PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
             Sequence scroll = new Sequence(finger, 1);
@@ -125,11 +134,21 @@ public class BasePage {
             scroll.addAction(finger.createPointerMove(Duration.ofMillis(0),
                     PointerInput.Origin.viewport(), startX, startY));
             scroll.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-            scroll.addAction(finger.createPointerMove(Duration.ofMillis(800),
+            scroll.addAction(finger.createPointerMove(Duration.ofMillis(duration),
                     PointerInput.Origin.viewport(), startX, endY));
             scroll.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 
             driver.perform(List.of(scroll));
+
+            if (elementVisible) {
+                return;
+            }
+
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
 
             attempt++;
         }

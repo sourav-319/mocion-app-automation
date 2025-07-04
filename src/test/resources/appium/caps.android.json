@@ -2,8 +2,8 @@
   "common": {
     "appium:platformName": "Android",
     "appium:automationName": "UiAutomator2",
-    "appium:platformVersion": "12",
-    "appium:deviceName": "R8KN200NKKJ",
+    "appium:platformVersion": "11",
+    "appium:deviceName": "e6d82a2c",
     "appium:appPackage": "com.mocion.mocion",
     "appium:appActivity": "com.mocion.mocion.MainActivity"
   }

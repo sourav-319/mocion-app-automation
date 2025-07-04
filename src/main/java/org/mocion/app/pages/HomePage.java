@@ -12,4 +12,12 @@ public class HomePage extends BasePage {
     public void selectMatch() {
         click(HOME_SCREEN, "select_match");
     }
+
+    public void selectCompetitive() {
+        click(HOME_SCREEN, "select_competitive");
+    }
+
+    public void selectFriendly() {
+        click(HOME_SCREEN, "select_friendly");
+    }
 }
