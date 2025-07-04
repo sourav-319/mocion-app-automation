@@ -99,7 +99,7 @@ public class BasePage {
         return driver.getTitle();
     }
 
-    public boolean scrollUntilVisible(String screen, String element) {
+    public void scrollUntilVisible(String screen, String element) {
         int maxScrolls = 5;
         int attempt = 0;
 
@@ -125,7 +125,7 @@ public class BasePage {
                     shortScroll.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 
                     driver.perform(List.of(shortScroll));
-                    return true;
+                    return;
                 }
             } catch (NoSuchElementException ignored) {
             }
@@ -158,6 +158,5 @@ public class BasePage {
             attempt++;
         }
 
-        return false;
     }
 }
