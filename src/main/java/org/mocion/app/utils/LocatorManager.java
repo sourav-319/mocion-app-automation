@@ -11,11 +11,6 @@ import java.io.FileReader;
 
 import static org.mocion.app.drivers.DriverFactory.getDriver;
 
-/**
- * LocatorManager is a singleton class responsible for managing locators used in the application.
- * It loads locators from a JSON file based on the platform name and provides a single instance of itself.
- */
-
 public class LocatorManager {
     private static LocatorManager instance = null;
 
@@ -23,19 +18,9 @@ public class LocatorManager {
     @Getter
     public static final JsonObject locators;
 
-    /**
-     * Private constructor to prevent instantiation.
-     * It calls the loadLocators method to load locators from the JSON file.
-     */
     private LocatorManager() {
     }
 
-    /**
-     * Provides the single instance of LocatorManager.
-     * If the instance is null, it creates a new instance.
-     *
-     * @return the single instance of LocatorManager
-     */
     public static synchronized LocatorManager getInstance() {
         if (instance == null) {
             instance = new LocatorManager();

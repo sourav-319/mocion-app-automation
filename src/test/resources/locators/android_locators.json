@@ -8,9 +8,16 @@
     "select_match": "ui:new UiSelector().description(\"Match\")"
   },
   "booking_screen": {
-    "book_now_button": "ui:new UiSelector().description(\"Book Now\").instance(2)",
-    "select_date": "ui:new UiSelector().description(\"Friday, June 20, 2025\")",
-    "select_time": "ui:new UiSelector().description(\"12:00\")",
+    "game_type_friendly": "ui:new UiSelector().description(\"Friendly\")",
+    "game_type_competitive": "ui:new UiSelector().description(\"Competitive\")",
+    "game_type_dropdown": "ui:new UiSelector().description(\"Friendly\")",
+    "booking_type_dropdown": "ui:new UiSelector().description(\"public match\")",
+    "booking_type_public_match": "ui:new UiSelector().description(\"Public match\")",
+    "booking_type_private_match": "ui:new UiSelector().description(\"Private match\")",
+    "search_input_field": "ui:new UiSelector().className(\"android.widget.EditText\")",
+    "book_now_button": "ui:new UiSelector().description(\"Book Now\")",
+    "select_booking_date": "ui:new UiSelector().description(\"{{TODAY}}\")",
+    "select_booking_time": "ui:new UiSelector().description(\"12:00\")",
     "court_dropdown": "ui:new UiSelector().className(\"android.widget.Button\")",
     "select_price": "xpath://android.view.View[contains(@content-desc, '30 AED')]"
   },

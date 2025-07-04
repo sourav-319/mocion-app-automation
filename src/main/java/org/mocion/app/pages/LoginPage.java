@@ -12,16 +12,16 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public LoginPage fillUserEmail() {
+    public LoginPage fillUserEmail(String userEmail) {
         click(LOGIN_SCREEN, "email_field");
-        type(LOGIN_SCREEN, "email_field", "arifultester@maildrop.cc");
+        type(LOGIN_SCREEN, "email_field", userEmail);
         ((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.BACK));
         return this;
     }
 
-    public LoginPage fillUserPassword() {
+    public LoginPage fillUserPassword(String userPassword) {
         click(LOGIN_SCREEN, "password_field");
-        type(LOGIN_SCREEN, "password_field", "12345678");
+        type(LOGIN_SCREEN, "password_field", userPassword);
         ((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.BACK));
         return this;
     }
