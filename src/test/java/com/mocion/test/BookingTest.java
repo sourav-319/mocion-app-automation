@@ -1,16 +1,12 @@
 package com.mocion.test;
 
 import org.mocion.app.pages.*;
+import org.mocion.app.utils.ConfigReader;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class BookingTest extends BaseTest {
-    private static final String CARD_NUMBER = "4111 1111 1111 1111";
-    private static final String CVV_NUMBER = "123";
-    private static final String USER_EMAIL = "arifultester@maildrop.cc";
-    private static final String USER_PASSWORD = "12345678";
-
     public LoginPage loginPage;
     public HomePage homePage;
     public BookingPage bookingPage;
@@ -45,8 +41,8 @@ public class BookingTest extends BaseTest {
         bookingDetailsPage
                 .clickConfirmPaymentButton();
         paymentPage
-                .fillCardNumber(CARD_NUMBER)
-                .fillCVVNumber(CVV_NUMBER)
+                .fillCardNumber(ConfigReader.get("card_number"))
+                .fillCVVNumber(ConfigReader.get("cvv_number"))
                 .clickMakePaymentButton()
                 .clickAcceptPaymentButton();
 
@@ -74,8 +70,8 @@ public class BookingTest extends BaseTest {
         bookingDetailsPage
                 .clickConfirmPaymentButton();
         paymentPage
-                .fillCardNumber(CARD_NUMBER)
-                .fillCVVNumber(CVV_NUMBER)
+                .fillCardNumber(ConfigReader.get("card_number"))
+                .fillCVVNumber(ConfigReader.get("cvv_number"))
                 .clickMakePaymentButton()
                 .clickAcceptPaymentButton();
 
@@ -103,8 +99,8 @@ public class BookingTest extends BaseTest {
         bookingDetailsPage
                 .clickConfirmPaymentButton();
         paymentPage
-                .fillCardNumber(CARD_NUMBER)
-                .fillCVVNumber(CVV_NUMBER)
+                .fillCardNumber(ConfigReader.get("card_number"))
+                .fillCVVNumber(ConfigReader.get("cvv_number"))
                 .clickMakePaymentButton()
                 .clickAcceptPaymentButton();
 
@@ -132,8 +128,8 @@ public class BookingTest extends BaseTest {
         bookingDetailsPage
                 .clickConfirmPaymentButton();
         paymentPage
-                .fillCardNumber(CARD_NUMBER)
-                .fillCVVNumber(CVV_NUMBER)
+                .fillCardNumber(ConfigReader.get("card_number"))
+                .fillCVVNumber(ConfigReader.get("cvv_number"))
                 .clickMakePaymentButton()
                 .clickAcceptPaymentButton();
 
@@ -144,8 +140,8 @@ public class BookingTest extends BaseTest {
     private void userLogin() {
         initPages();
         loginPage
-                .fillUserEmail(USER_EMAIL)
-                .fillUserPassword(USER_PASSWORD)
+                .fillUserEmail(ConfigReader.get("user.email"))
+                .fillUserPassword(ConfigReader.get("user.password"))
                 .clickNextButton();
     }
 }

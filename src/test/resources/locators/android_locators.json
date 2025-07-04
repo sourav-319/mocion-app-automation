@@ -5,7 +5,9 @@
     "next_button": "ui:new UiSelector().description(\"Next\")"
   },
   "home_screen": {
-    "select_match": "ui:new UiSelector().description(\"Match\")"
+    "select_match": "ui:new UiSelector().description(\"Match\")",
+    "select_competitive": "ui:new UiSelector().description(\"Competitive\")",
+    "select_friendly": "ui:new UiSelector().description(\"Friendly\")"
   },
   "booking_screen": {
     "game_type_friendly": "ui:new UiSelector().description(\"Friendly\")",
@@ -25,10 +27,24 @@
     "confirm_payment_button": "ui:new UiSelector().description(\"Confirm Total Payment 7.76 AED\")"
   },
   "payment_screen": {
-    "card_number_field": "ui:new UiSelector().resourceId(\"creditCardNumber\")",
-    "cvv_number_field": "ui:new UiSelector().resourceId(\"cardCVV\")",
+    "card_number_field": "ui:new UiSelector().className(\"android.widget.EditText\").instance(0)",
+    "cvv_number_field": "ui:new UiSelector().className(\"android.widget.EditText\").instance(1)",
     "make_payment_button": "ui:new UiSelector().text(\"Make payment\")",
     "accept_payment_button": "ui:new UiSelector().text(\"Accept\")",
     "payment_successful_locator": "ui:new UiSelector().description(\"Payment Successful\")"
+  },
+  "competitive_screen": {
+    "search_input_field": "ui:new UiSelector().className(\"android.widget.EditText\")",
+    "select_tournament": "ui:new UiSelector().className(\"android.view.View\").clickable(true).instance(2)",
+    "click_tournaments": "ui:new UiSelector().description(\"Tournaments\")"
+  },
+  "friendly_screen": {
+    "search_input_field": "ui:new UiSelector().className(\"android.widget.EditText\")",
+    "select_tournament": "ui:new UiSelector().className(\"android.view.View\").clickable(true).instance(2)",
+    "click_tournaments": "ui:new UiSelector().description(\"Tournaments\")"
+  },
+  "tournaments_screen": {
+    "book_place_button": "ui:new UiSelector().description(\"Book place 10.0 AED\")",
+    "confirm_total_payment_button": "ui:new UiSelector().className(\"android.widget.Button\").clickable(true).instance(0)"
   }
 }
