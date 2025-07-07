@@ -35,9 +35,13 @@ public class BookingPage extends BasePage {
         return this;
     }
 
-    public void selectPrice() {
-        scrollUntilVisible(BOOKING_SCREEN, "select_price");
+    public BookingPage selectPrice() {
         click(BOOKING_SCREEN, "select_price");
+        return this;
+    }
+
+    public void clickContinueButton() {
+        click(BOOKING_SCREEN, "continue_button");
     }
 
     public BookingPage fillSearchKeyword(String searchKeyword) {

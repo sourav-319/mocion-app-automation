@@ -20,11 +20,12 @@
     "book_now_button": "ui:new UiSelector().description(\"Book Now\")",
     "select_booking_date": "ui:new UiSelector().description(\"{{TODAY}}\")",
     "select_booking_time": "ui:new UiSelector().description(\"12:00\")",
-    "court_dropdown": "ui:new UiSelector().className(\"android.widget.Button\")",
-    "select_price": "xpath://android.view.View[contains(@content-desc, '30 AED')]"
+    "court_dropdown": "ui:new UiSelector().className(\"android.widget.Button\").instance(0)",
+    "select_price": "ui:new UiSelector().className(\"android.view.View\").clickable(true).instance(20)",
+    "continue_button": "ui:new UiSelector().description(\"Continue\")"
   },
   "booking_details_screen": {
-    "confirm_payment_button": "ui:new UiSelector().description(\"Confirm Total Payment 7.76 AED\")"
+    "confirm_payment_button": "ui:new UiSelector().description(\"Confirm Total Payment 12.94 AED\")"
   },
   "payment_screen": {
     "card_number_field": "ui:new UiSelector().className(\"android.widget.EditText\").instance(0)",
