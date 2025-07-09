@@ -7,7 +7,8 @@
   "home_screen": {
     "select_match": "ui:new UiSelector().description(\"Match\")",
     "select_competitive": "ui:new UiSelector().description(\"Competitive\")",
-    "select_friendly": "ui:new UiSelector().description(\"Friendly\")"
+    "select_friendly": "ui:new UiSelector().description(\"Friendly\")",
+    "my_upcoming_bookings": "xpath://android.widget.ImageView[contains(@content-desc, 'View all')]"
   },
   "booking_screen": {
     "game_type_friendly": "ui:new UiSelector().description(\"Friendly\")",
@@ -18,14 +19,16 @@
     "booking_type_private_match": "ui:new UiSelector().description(\"Private match\")",
     "search_input_field": "ui:new UiSelector().className(\"android.widget.EditText\")",
     "book_now_button": "ui:new UiSelector().description(\"Book Now\")",
-    "select_booking_date": "ui:new UiSelector().description(\"{{TODAY}}\")",
+    "select_booking_date": "ui:new UiSelector().description(\"{{TOMORROW}}\")",
     "select_booking_time": "ui:new UiSelector().description(\"12:00\")",
     "court_dropdown": "ui:new UiSelector().className(\"android.widget.Button\").instance(0)",
     "select_price": "ui:new UiSelector().className(\"android.view.View\").clickable(true).instance(20)",
     "continue_button": "ui:new UiSelector().description(\"Continue\")"
   },
   "booking_details_screen": {
-    "confirm_payment_button": "ui:new UiSelector().description(\"Confirm Total Payment 12.94 AED\")"
+    "confirm_payment_button": "ui:new UiSelector().description(\"Confirm Total Payment 12.94 AED\")",
+    "cancel_booking_button": "ui:new UiSelector().description(\"Cancel Booking\")",
+    "yes_to_cancel_booking_button": "ui:new UiSelector().description(\"Yes\")"
   },
   "payment_screen": {
     "card_number_field": "ui:new UiSelector().className(\"android.widget.EditText\").instance(0)",
@@ -47,5 +50,8 @@
   "tournaments_screen": {
     "book_place_button": "ui:new UiSelector().description(\"Book place 10.0 AED\")",
     "confirm_total_payment_button": "ui:new UiSelector().className(\"android.widget.Button\").clickable(true).instance(0)"
+  },
+  "my_bookings_screen": {
+    "select_booking": "ui:new UiSelector().className(\"android.view.View\").instance(8)"
   }
 }

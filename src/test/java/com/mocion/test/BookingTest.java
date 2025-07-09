@@ -12,6 +12,7 @@ public class BookingTest extends BaseTest {
     public BookingPage bookingPage;
     public BookingDetailsPage bookingDetailsPage;
     public PaymentPage paymentPage;
+    public MyBookingsPage myBookingsPage;
 
     private void initPages() {
         loginPage = new LoginPage(driver);
@@ -19,6 +20,7 @@ public class BookingTest extends BaseTest {
         bookingPage = new BookingPage(driver);
         bookingDetailsPage = new BookingDetailsPage(driver);
         paymentPage = new PaymentPage(driver);
+        myBookingsPage = new MyBookingsPage(driver);
     }
 
     @Test(description = "Friendly public Match booking create should successful")
@@ -137,6 +139,19 @@ public class BookingTest extends BaseTest {
 
         WebElement successElement = paymentPage.waitForPaymentSuccessElement();
         Assert.assertTrue(successElement.isDisplayed());
+    }
+
+    @Test(description = "Cancel booking should successful")
+    public void verify_cancel_booking_should_succeed() {
+        initPages();
+        userLogin();
+        homePage
+                .clickMyUpcomingBookings();
+        myBookingsPage
+                .selectBooking();
+        bookingDetailsPage
+                .clickCancelBookingButton()
+                .clickYesToCancelBooking();
     }
 
     private void userLogin() {
