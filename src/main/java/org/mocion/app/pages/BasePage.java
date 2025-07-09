@@ -51,10 +51,18 @@ public class BasePage {
 
         String locator = screenLocators.get(element).getAsString();
 
-        // Replace {{TODAY}} with current date
-        if (locator.contains("{{TODAY}}")) {
-            String today = new java.text.SimpleDateFormat("EEEE, MMMM d, yyyy").format(new java.util.Date());
-            locator = locator.replace("{{TODAY}}", today);
+        // Replace {{TODAY/TOMORROW}} with current date
+        if (locator.contains("{{TODAY}}") || locator.contains("{{TOMORROW}}")) {
+            if (locator.contains("{{TODAY}}")) {
+                String today = new java.text.SimpleDateFormat("EEEE, MMMM d, yyyy").format(new java.util.Date());
+                locator = locator.replace("{{TODAY}}", today);
+            }
+            if (locator.contains("{{TOMORROW}}")) {
+                java.util.Calendar calendar = java.util.Calendar.getInstance();
+                calendar.add(java.util.Calendar.DATE, 1); // Tomorrow
+                String tomorrow = new java.text.SimpleDateFormat("EEEE, MMMM d, yyyy").format(calendar.getTime());
+                locator = locator.replace("{{TOMORROW}}", tomorrow);
+            }
         }
 
         String[] parts = locator.split(":", 2);

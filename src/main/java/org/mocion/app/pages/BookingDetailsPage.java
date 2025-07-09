@@ -13,4 +13,14 @@ public class BookingDetailsPage extends BasePage {
         scrollUntilVisible(BOOKING_DETAILS_SCREEN, "confirm_payment_button");
         click(BOOKING_DETAILS_SCREEN, "confirm_payment_button");
     }
+
+    public BookingDetailsPage clickCancelBookingButton() {
+        scrollUntilVisible(BOOKING_DETAILS_SCREEN, "cancel_booking_button");
+        click(BOOKING_DETAILS_SCREEN, "cancel_booking_button");
+        return this;
+    }
+
+    public void clickYesToCancelBooking() {
+        click(BOOKING_DETAILS_SCREEN, "yes_to_cancel_booking_button");
+    }
 }

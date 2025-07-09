@@ -20,4 +20,8 @@ public class HomePage extends BasePage {
     public void selectFriendly() {
         click(HOME_SCREEN, "select_friendly");
     }
+
+    public void clickMyUpcomingBookings() {
+        click(HOME_SCREEN, "my_upcoming_bookings");
+    }
 }
