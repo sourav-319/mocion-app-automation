@@ -141,6 +141,68 @@ public class BookingTest extends BaseTest {
         Assert.assertTrue(successElement.isDisplayed());
     }
 
+    @Test(description = "Friendly private Match booking create with split payment should successful")
+    public void verify_friendly_private_match_booking_create_with_spilt_payment_should_succeed() {
+        String searchKeyword = "Farah123";
+
+        initPages();
+        userLogin();
+        homePage
+                .selectMatch();
+        bookingPage
+                .fillSearchKeyword(searchKeyword)
+                .clickBookNowButton()
+                .selectBookingTypePrivate()
+                .selectGameTypeFriendly()
+                .selectBookingDate()
+                .selectBookingTime()
+                .clickCourtDropdown()
+                .selectPrice()
+                .clickContinueButton();
+        bookingDetailsPage
+                .selectSplitPayment()
+                .clickConfirmPaymentButton();
+        paymentPage
+                .fillCardNumber(ConfigReader.get("card_number"))
+                .fillCVVNumber(ConfigReader.get("cvv_number"))
+                .clickMakePaymentButton()
+                .clickAcceptPaymentButton();
+
+        WebElement successElement = paymentPage.waitForPaymentSuccessElement();
+        Assert.assertTrue(successElement.isDisplayed());
+    }
+
+    @Test(description = "Friendly private Match booking create with full payment should successful")
+    public void verify_friendly_private_match_booking_create_with_full_payment_should_succeed() {
+        String searchKeyword = "Farah123";
+
+        initPages();
+        userLogin();
+        homePage
+                .selectMatch();
+        bookingPage
+                .fillSearchKeyword(searchKeyword)
+                .clickBookNowButton()
+                .selectBookingTypePrivate()
+                .selectGameTypeFriendly()
+                .selectBookingDate()
+                .selectBookingTime()
+                .clickCourtDropdown()
+                .selectPrice()
+                .clickContinueButton();
+        bookingDetailsPage
+                .selectFullPayment()
+                .clickConfirmPaymentButton();
+        paymentPage
+                .fillCardNumber(ConfigReader.get("card_number"))
+                .fillCVVNumber(ConfigReader.get("cvv_number"))
+                .clickMakePaymentButton()
+                .clickAcceptPaymentButton();
+
+        WebElement successElement = paymentPage.waitForPaymentSuccessElement();
+        Assert.assertTrue(successElement.isDisplayed());
+    }
+
     @Test(description = "Cancel booking should successful")
     public void verify_cancel_booking_should_succeed() {
         initPages();
