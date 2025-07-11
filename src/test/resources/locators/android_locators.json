@@ -26,9 +26,11 @@
     "continue_button": "ui:new UiSelector().description(\"Continue\")"
   },
   "booking_details_screen": {
-    "confirm_payment_button": "ui:new UiSelector().description(\"Confirm Total Payment 12.94 AED\")",
+    "confirm_payment_button": "xpath://android.widget.Button[@clickable='true' and @enabled='true']",
     "cancel_booking_button": "ui:new UiSelector().description(\"Cancel Booking\")",
-    "yes_to_cancel_booking_button": "ui:new UiSelector().description(\"Yes\")"
+    "yes_to_cancel_booking_button": "ui:new UiSelector().description(\"Yes\")",
+    "split_payment": "ui:new UiSelector().className(\"android.widget.RadioButton\").instance(0)",
+    "full_payment": "ui:new UiSelector().className(\"android.widget.RadioButton\").instance(1)"
   },
   "payment_screen": {
     "card_number_field": "ui:new UiSelector().className(\"android.widget.EditText\").instance(0)",

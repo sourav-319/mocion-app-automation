@@ -23,4 +23,15 @@ public class BookingDetailsPage extends BasePage {
     public void clickYesToCancelBooking() {
         click(BOOKING_DETAILS_SCREEN, "yes_to_cancel_booking_button");
     }
+
+    public BookingDetailsPage selectSplitPayment() {
+        click(BOOKING_DETAILS_SCREEN, "split_payment");
+        return this;
+    }
+
+    public BookingDetailsPage selectFullPayment() {
+        scrollUntilVisible(BOOKING_DETAILS_SCREEN, "full_payment");
+        click(BOOKING_DETAILS_SCREEN, "full_payment");
+        return this;
+    }
 }
