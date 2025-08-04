@@ -21,6 +21,11 @@ public class EventDetailsPage extends BasePage {
         return this;
     }
 
+    public void clickRemoveMeFromWaitingListButton() {
+        scrollUntilVisible(EVENT_DETAILS_SCREEN, "remove_me_from_waiting_list_button");
+        click(EVENT_DETAILS_SCREEN, "remove_me_from_waiting_list_button");
+    }
+
     public void clickBookPlaceButton() {
         scrollUntilVisible(EVENT_DETAILS_SCREEN, "book_place_button");
         click(EVENT_DETAILS_SCREEN, "book_place_button");
@@ -43,6 +48,12 @@ public class EventDetailsPage extends BasePage {
 
     public WebElement cancelInscriptionSuccessLocator() {
         By locator = getLocator(EVENT_DETAILS_SCREEN, "cancel_inscription_success_message");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public WebElement bookPlaceButtonLocatorLocator() {
+        By locator = getLocator(EVENT_DETAILS_SCREEN, "book_place_button");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }

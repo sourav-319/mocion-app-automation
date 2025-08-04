@@ -82,6 +82,24 @@ public class PublicEventTest extends BaseTest {
         Assert.assertTrue(successElement.isDisplayed());
     }
 
+    @Test(description = "Remove me from waiting list for competitive public event should successful")
+    public void verify_remove_me_from_waiting_list_for_competitive_public_event_should_succeed() {
+        String searchKeyword = "test rounds";
+
+        initPages();
+        userLogin();
+        homePage
+                .selectCompetitive();
+        competitivePage
+                .fillSearchKeyword(searchKeyword)
+                .selectPublicEvent();
+        eventDetailsPage
+                .clickRemoveMeFromWaitingListButton();
+
+        WebElement successElement = eventDetailsPage.bookPlaceButtonLocatorLocator();
+        Assert.assertTrue(successElement.isDisplayed());
+    }
+
     @Test(description = "Cancel public competitive event booking should successful")
     public void verify_cancel_public_competitive_event_booking_should_succeed() {
         String searchKeyword = "test rounds";
