@@ -27,4 +27,8 @@ public class CompetitivePage extends BasePage {
     public void selectTournament() {
         click(COMPETITIVE_SCREEN, "select_tournament");
     }
+
+    public void selectPublicEvent() {
+        click(COMPETITIVE_SCREEN, "select_public_event");
+    }
 }
