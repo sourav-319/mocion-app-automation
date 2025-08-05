@@ -9,9 +9,9 @@
     "select_competitive": "ui:new UiSelector().description(\"Competitive\")",
     "select_friendly": "ui:new UiSelector().description(\"Friendly\")",
     "my_upcoming_bookings": "xpath://android.widget.ImageView[contains(@content-desc, 'View all')]",
-    "notification_icon": "ui:new UiSelector().className(\"android.widget.ImageView\").instance(2)",
+    "notification_icon": "ui:new UiSelector().className(\"android.widget.ImageView\").instance(3)",
     "profile_icon": "ui:new UiSelector().className(\"android.widget.ImageView\").instance(1)",
-    "logout_text": "xpath://android.view.View[@content-desc=\"Log out\"]",
+    "logout_text": "ui:new UiSelector().description(\"Log out\")",
     "yes_to_confirm_logout": "ui:new UiSelector().description(\"Yes\")"
   },
   "booking_screen": {
