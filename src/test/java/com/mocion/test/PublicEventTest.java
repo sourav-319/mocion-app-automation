@@ -46,7 +46,7 @@ public class PublicEventTest extends BaseTest {
     }
 
     @Test(description = "Waiting list player get notification when event player cancel booking should successful")
-    public void verify_waiting_list_player_get_notification_when_event_player_cancel_booking_should_succeed() throws InterruptedException {
+    public void verify_waiting_list_player_get_notification_when_event_player_cancel_booking_should_succeed() {
         userLogin();
         homePage
                 .clickNotificationIcon();
