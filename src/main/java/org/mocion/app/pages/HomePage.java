@@ -9,6 +9,25 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
+    public HomePage clickProfileIcon(){
+        click(HOME_SCREEN, "profile_icon");
+        return this;
+    }
+
+    public HomePage clickLogout(){
+        click(HOME_SCREEN, "logout_text");
+        return this;
+    }
+
+    public HomePage clickBack(){
+        driver.navigate().back();
+        return this;
+    }
+
+    public void clickYesToConfirmLogout(){
+        click(HOME_SCREEN, "yes_to_confirm_logout");
+    }
+
     public void selectMatch() {
         click(HOME_SCREEN, "select_match");
     }

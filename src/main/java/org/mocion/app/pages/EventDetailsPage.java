@@ -52,7 +52,22 @@ public class EventDetailsPage extends BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    public WebElement bookPlaceButtonLocatorLocator() {
+    public WebElement addMeToWaitingListButtonLocator() {
+        scrollUntilVisible(EVENT_DETAILS_SCREEN, "add_me_to_waiting_list_button");
+        By locator = getLocator(EVENT_DETAILS_SCREEN, "add_me_to_waiting_list_button");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public WebElement cancelInscriptionButtonLocator() {
+        scrollUntilVisible(EVENT_DETAILS_SCREEN, "cancel_inscription_button");
+        By locator = getLocator(EVENT_DETAILS_SCREEN, "cancel_inscription_button");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public WebElement bookPlaceButtonLocator() {
+        scrollUntilVisible(EVENT_DETAILS_SCREEN, "book_place_button");
         By locator = getLocator(EVENT_DETAILS_SCREEN, "book_place_button");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));

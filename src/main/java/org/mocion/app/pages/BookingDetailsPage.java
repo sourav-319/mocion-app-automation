@@ -41,9 +41,15 @@ public class BookingDetailsPage extends BasePage {
         return this;
     }
 
-    public void clickConfirmTotalPaymentButton() {
+    public BookingDetailsPage clickConfirmTotalPaymentButton() {
         scrollUntilVisible(BOOKING_DETAILS_SCREEN, "confirm_total_payment_button");
         click(BOOKING_DETAILS_SCREEN, "confirm_total_payment_button");
+        return this;
+    }
+
+    public BookingDetailsPage clickOkButton() {
+        click(BOOKING_DETAILS_SCREEN, "click_ok_button");
+        return this;
     }
 
     public WebElement confirmBookingSuccessMessageLocator() {

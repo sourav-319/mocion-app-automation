@@ -16,7 +16,13 @@ public class NotificationPage extends BasePage {
     }
 
     public WebElement addPlayerToEventNotificationLocator() {
-        By locator = getLocator(NOTIFICATION_SCREEN, "add_player_to_event_success_notification");
+        By locator = getLocator(NOTIFICATION_SCREEN, "add_player_to_event_notification");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public WebElement eventWaitingListNotificationLocator() {
+        By locator = getLocator(NOTIFICATION_SCREEN, "event_waiting_list_notification");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }

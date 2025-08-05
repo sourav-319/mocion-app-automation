@@ -45,6 +45,84 @@ public class PublicEventTest extends BaseTest {
         Assert.assertTrue(successElement.isDisplayed());
     }
 
+    //a
+    @Test(description = "Waiting list player get notification when event player cancel booking should successful")
+    public void verify_waiting_list_player_get_notification_when_event_player_cancel_booking_should_succeed() {
+        String searchKeyword = "test rounds";
+
+        userLogin();
+        homePage
+                .selectCompetitive();
+        competitivePage
+                .fillSearchKeyword(searchKeyword)
+                .selectPublicEvent();
+        eventDetailsPage
+                .clickAddMeToWaitingListButton();
+        homePage
+                .clickBack()
+                .clickBack()
+                .clickBack()
+                .clickProfileIcon()
+                .clickLogout()
+                .clickYesToConfirmLogout();
+
+        secondUserLogin();
+        homePage
+                .selectCompetitive();
+        competitivePage
+                .fillSearchKeyword(searchKeyword)
+                .selectPublicEvent();
+        eventDetailsPage
+                .clickCancelInscriptionButton()
+                .clickYestToConfirmCancelBooking();
+        homePage
+                .clickBack()
+                .clickBack()
+                .clickBack()
+                .clickBack();
+        homePage
+                .clickProfileIcon()
+                .clickLogout()
+                .clickYesToConfirmLogout();
+
+        homePage
+                .clickNotificationIcon();
+
+        WebElement successElement = notificationPage.eventWaitingListNotificationLocator();
+        Assert.assertTrue(successElement.isDisplayed());
+    }
+
+    //c
+    @Test(description = "The right buttons appear for the user depending on his status should successful")
+    public void verify_the_right_buttons_appear_for_the_user_depending_on_his_status_should_succeed() {
+        String searchKeyword = "test rounds";
+
+        initPages();
+        userLogin();
+        homePage
+                .selectCompetitive();
+        competitivePage
+                .fillSearchKeyword(searchKeyword)
+                .selectPublicEvent();
+
+        WebElement successElement = eventDetailsPage.addMeToWaitingListButtonLocator();
+        Assert.assertTrue(successElement.isDisplayed());
+
+        eventDetailsPage
+                .clickAddMeToWaitingListButton();
+
+        WebElement successElementTwo = eventDetailsPage.cancelInscriptionButtonLocator();
+        Assert.assertTrue(successElementTwo.isDisplayed());
+
+        eventDetailsPage
+                .clickCancelInscriptionButton()
+                .clickYestToConfirmCancelBooking();
+
+        WebElement successElementThree = eventDetailsPage.addMeToWaitingListButtonLocator();
+        Assert.assertTrue(successElementThree.isDisplayed());
+    }
+
+    //d
     @Test(description = "Request to join waiting list for competitive public event should successful")
     public void verify_request_to_join_waiting_list_for_competitive_public_event_should_succeed() {
         String searchKeyword = "test rounds";
@@ -63,25 +141,7 @@ public class PublicEventTest extends BaseTest {
         Assert.assertTrue(successElement.isDisplayed());
     }
 
-    @Test(description = "Cancel request to join waiting list for competitive public event should successful")
-    public void verify_cancel_request_to_join_waiting_list_for_competitive_public_event_should_succeed() {
-        String searchKeyword = "test rounds";
-
-        initPages();
-        userLogin();
-        homePage
-                .selectCompetitive();
-        competitivePage
-                .fillSearchKeyword(searchKeyword)
-                .selectPublicEvent();
-        eventDetailsPage
-                .clickCancelInscriptionButton()
-                .clickYestToConfirmCancelBooking();
-
-        WebElement successElement = eventDetailsPage.cancelInscriptionSuccessLocator();
-        Assert.assertTrue(successElement.isDisplayed());
-    }
-
+    //e
     @Test(description = "Remove me from waiting list for competitive public event should successful")
     public void verify_remove_me_from_waiting_list_for_competitive_public_event_should_succeed() {
         String searchKeyword = "test rounds";
@@ -96,12 +156,13 @@ public class PublicEventTest extends BaseTest {
         eventDetailsPage
                 .clickRemoveMeFromWaitingListButton();
 
-        WebElement successElement = eventDetailsPage.bookPlaceButtonLocatorLocator();
+        WebElement successElement = eventDetailsPage.bookPlaceButtonLocator();
         Assert.assertTrue(successElement.isDisplayed());
     }
 
-    @Test(description = "Cancel public competitive event booking should successful")
-    public void verify_cancel_public_competitive_event_booking_should_succeed() {
+    //b
+    @Test(description = "Cancel competitive public event after join should successful")
+    public void verify_cancel_competitive_public_event_after_cancel_should_succeed() {
         String searchKeyword = "test rounds";
 
         initPages();
@@ -119,6 +180,7 @@ public class PublicEventTest extends BaseTest {
         Assert.assertTrue(successElement.isDisplayed());
     }
 
+    //f
     @Test(description = "Add player to event send notification should successful")
     public void verify_add_player_to_event_send_notification_should_succeed() {
         initPages();
@@ -135,6 +197,14 @@ public class PublicEventTest extends BaseTest {
         loginPage
                 .fillUserEmail(ConfigReader.get("user.email"))
                 .fillUserPassword(ConfigReader.get("user.password"))
+                .clickNextButton();
+    }
+
+    private void secondUserLogin() {
+        initPages();
+        loginPage
+                .fillUserEmail(ConfigReader.get("user.email_2"))
+                .fillUserPassword(ConfigReader.get("user.password_2"))
                 .clickNextButton();
     }
 }
