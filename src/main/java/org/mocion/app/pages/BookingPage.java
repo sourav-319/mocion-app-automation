@@ -40,10 +40,6 @@ public class BookingPage extends BasePage {
         return this;
     }
 
-    public void clickContinueButton() {
-        click(BOOKING_SCREEN, "continue_button");
-    }
-
     public BookingPage fillSearchKeyword(String searchKeyword) {
         click(BOOKING_SCREEN, "search_input_field");
         type(BOOKING_SCREEN, "search_input_field", searchKeyword);
@@ -73,5 +69,9 @@ public class BookingPage extends BasePage {
         click(BOOKING_SCREEN, "game_type_dropdown");
         click(BOOKING_SCREEN, "game_type_competitive");
         return this;
+    }
+
+    public void clickContinueButton() {
+        click(BOOKING_SCREEN, "continue_button");
     }
 }

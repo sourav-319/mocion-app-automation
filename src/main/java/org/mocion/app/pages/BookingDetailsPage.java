@@ -15,19 +15,10 @@ public class BookingDetailsPage extends BasePage {
         super(driver);
     }
 
-    public void clickConfirmPaymentButton() {
-        scrollUntilVisible(BOOKING_DETAILS_SCREEN, "confirm_payment_button");
-        click(BOOKING_DETAILS_SCREEN, "confirm_payment_button");
-    }
-
     public BookingDetailsPage clickCancelBookingButton() {
         scrollUntilVisible(BOOKING_DETAILS_SCREEN, "cancel_booking_button");
         click(BOOKING_DETAILS_SCREEN, "cancel_booking_button");
         return this;
-    }
-
-    public void clickYesToCancelBooking() {
-        click(BOOKING_DETAILS_SCREEN, "yes_to_cancel_booking_button");
     }
 
     public BookingDetailsPage selectSplitPayment() {
@@ -41,15 +32,18 @@ public class BookingDetailsPage extends BasePage {
         return this;
     }
 
-    public BookingDetailsPage clickConfirmTotalPaymentButton() {
+    public void clickConfirmTotalPaymentButton() {
         scrollUntilVisible(BOOKING_DETAILS_SCREEN, "confirm_total_payment_button");
         click(BOOKING_DETAILS_SCREEN, "confirm_total_payment_button");
-        return this;
     }
 
-    public BookingDetailsPage clickOkButton() {
-        click(BOOKING_DETAILS_SCREEN, "click_ok_button");
-        return this;
+    public void clickConfirmPaymentButton() {
+        scrollUntilVisible(BOOKING_DETAILS_SCREEN, "confirm_payment_button");
+        click(BOOKING_DETAILS_SCREEN, "confirm_payment_button");
+    }
+
+    public void clickYesToCancelBooking() {
+        click(BOOKING_DETAILS_SCREEN, "yes_to_cancel_booking_button");
     }
 
     public WebElement confirmBookingSuccessMessageLocator() {
