@@ -22,7 +22,6 @@ public class LoginPage extends BasePage {
     public LoginPage fillUserPassword(String userPassword) {
         click(LOGIN_SCREEN, "password_field");
         type(LOGIN_SCREEN, "password_field", userPassword);
-        ((AndroidDriver) driver).pressKey(new KeyEvent(AndroidKey.BACK));
         return this;
     }
 

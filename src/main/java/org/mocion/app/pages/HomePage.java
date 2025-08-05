@@ -24,4 +24,8 @@ public class HomePage extends BasePage {
     public void clickMyUpcomingBookings() {
         click(HOME_SCREEN, "my_upcoming_bookings");
     }
+
+    public void clickNotificationIcon() {
+        click(HOME_SCREEN, "notification_icon");
+    }
 }
