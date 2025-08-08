@@ -67,7 +67,8 @@
     "yes_to_confirm_cancel_booking": "ui:new UiSelector().description(\"Yes\")",
     "cancel_inscription_success_message": "ui:new UiSelector().description(\"Your booking canceled successfully\")",
     "book_place_button": "ui:new UiSelector().className(\"android.widget.Button\").instance(0)",
-    "remove_me_from_waiting_list_button": "ui:new UiSelector().description(\"Remove me from waiting list\")"
+    "remove_me_from_waiting_list_button": "ui:new UiSelector().description(\"Remove me from waiting list\")",
+    "schedule_icon": "ui:new UiSelector().description(\"Schedule\")"
   },
   "notification_screen": {
     "add_player_to_event_notification": "ui:new UiSelector().className(\"android.view.View\").descriptionContains(\"Event Invitation Notification\").instance(0)",
