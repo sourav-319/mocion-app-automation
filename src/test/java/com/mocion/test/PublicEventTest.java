@@ -153,7 +153,7 @@ public class PublicEventTest extends BaseTest {
         Assert.assertTrue(successElement.isDisplayed());
     }
 
-    @Test(description = "Player should not repeat a partner until they match with all other players in americano event should succeed")
+    @Test(description = "Player should not repeat a partner until they match with all other players in americano event should successful")
     public void verify_player_should_not_repeat_partner_until_they_match_with_all_other_players_in_americano_event_should_succeed() {
         String searchKeyword = "test rounds";
         int totalRounds = 5;
