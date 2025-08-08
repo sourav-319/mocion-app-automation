@@ -229,6 +229,63 @@ public class PublicEventTest extends BaseTest {
         eventDetailsPage.verifyNoConsecutiveOpponents(roundsData);
     }
 
+    @Test(description = "Not to repeat the opponent for as long as possible in maxicano event should successful")
+    public void verify_make_sure_not_to_repeat_the_opponent_for_as_long_as_possible_in_maxicano_event_should_succeed() {
+        String searchKeyword = "test rounds";
+        int totalRounds = 5;
+
+        initPages();
+        userLogin();
+        homePage
+                .selectCompetitive();
+        competitivePage
+                .fillSearchKeyword(searchKeyword)
+                .selectPublicEvent();
+        eventDetailsPage
+                .clickScheduleIcon();
+
+        Map<String, Map<String, List<List<String>>>> roundsData = eventDetailsPage.getAllRoundsData(totalRounds);
+        eventDetailsPage.verifyNoOpponentRepeat(roundsData);
+    }
+
+    @Test(description = "Repeat the opponent with the least matches played in maxicano event should successful")
+    public void verify_repeat_the_opponent_with_the_least_matches_played_in_maxicano_event_should_succeed() {
+        String searchKeyword = "test rounds";
+        int totalRounds = 5;
+
+        initPages();
+        userLogin();
+        homePage
+                .selectCompetitive();
+        competitivePage
+                .fillSearchKeyword(searchKeyword)
+                .selectPublicEvent();
+        eventDetailsPage
+                .clickScheduleIcon();
+
+        Map<String, Map<String, List<List<String>>>> roundsData = eventDetailsPage.getAllRoundsData(totalRounds);
+        eventDetailsPage.verifyOpponentRepeatWithLeastPlayed(roundsData);
+    }
+
+    @Test(description = "Do not play against player in consecutive rounds in maxicano event should successful")
+    public void verify_do_not_play_against_player_in_consecutive_rounds_in_maxicano_event_should_succeed() {
+        String searchKeyword = "test rounds";
+        int totalRounds = 5;
+
+        initPages();
+        userLogin();
+        homePage
+                .selectCompetitive();
+        competitivePage
+                .fillSearchKeyword(searchKeyword)
+                .selectPublicEvent();
+        eventDetailsPage
+                .clickScheduleIcon();
+
+        Map<String, Map<String, List<List<String>>>> roundsData = eventDetailsPage.getAllRoundsData(totalRounds);
+        eventDetailsPage.verifyNoConsecutiveOpponents(roundsData);
+    }
+
     private void userLogin() {
         initPages();
         loginPage
