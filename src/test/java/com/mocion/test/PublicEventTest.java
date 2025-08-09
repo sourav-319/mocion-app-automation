@@ -48,18 +48,8 @@ public class PublicEventTest extends BaseTest {
         Assert.assertTrue(successElement.isDisplayed());
     }
 
-    @Test(description = "Waiting list player get notification when event player cancel booking should successful")
-    public void verify_waiting_list_player_get_notification_when_event_player_cancel_booking_should_succeed() {
-        userLogin();
-        homePage
-                .clickNotificationIcon();
-
-        WebElement successElement = notificationPage.eventWaitingListNotificationLocator();
-        Assert.assertTrue(successElement.isDisplayed());
-    }
-
-    @Test(description = "The right buttons appear for the user depending on his status should successful")
-    public void verify_the_right_buttons_appear_for_the_user_depending_on_his_status_should_succeed() {
+    @Test(description = "The right buttons appear for the user depending on his status for public event should successful")
+    public void verify_the_right_buttons_appear_for_the_user_depending_on_his_status_for_public_event_should_succeed() {
         String searchKeyword = "test rounds";
 
         initPages();
@@ -142,8 +132,8 @@ public class PublicEventTest extends BaseTest {
         Assert.assertTrue(successElement.isDisplayed());
     }
 
-    @Test(description = "Add player to event send notification should successful")
-    public void verify_add_player_to_event_send_notification_should_succeed() {
+    @Test(description = "Add player to public event send notification should successful")
+    public void verify_add_player_to_public_event_send_notification_should_succeed() {
         initPages();
         userLogin();
         homePage
@@ -153,8 +143,28 @@ public class PublicEventTest extends BaseTest {
         Assert.assertTrue(successElement.isDisplayed());
     }
 
-    @Test(description = "Player should not repeat a partner until they match with all other players in americano event should successful")
-    public void verify_player_should_not_repeat_partner_until_they_match_with_all_other_players_in_americano_event_should_succeed() {
+    @Test(description = "Waiting list player get notification when public event player cancel booking should successful")
+    public void verify_waiting_list_player_get_notification_when_public_event_player_cancel_booking_should_succeed() {
+        userLogin();
+        homePage
+                .clickNotificationIcon();
+
+        WebElement successElement = notificationPage.eventWaitingListNotificationLocator();
+        Assert.assertTrue(successElement.isDisplayed());
+    }
+
+    @Test(description = "Waiting list player get notification when club admin remove public event player should successful")
+    public void verify_waiting_list_player_get_notification_when_club_admin_remove_public_event_player_should_succeed() {
+        userLogin();
+        homePage
+                .clickNotificationIcon();
+
+        WebElement successElement = notificationPage.eventWaitingListNotificationLocator();
+        Assert.assertTrue(successElement.isDisplayed());
+    }
+
+    @Test(description = "Player should not repeat a partner until they match with all other players in americano public event should successful")
+    public void verify_player_should_not_repeat_partner_until_they_match_with_all_other_players_in_americano_public_event_should_succeed() {
         String searchKeyword = "test rounds";
         int totalRounds = 5;
 
@@ -172,8 +182,8 @@ public class PublicEventTest extends BaseTest {
         eventDetailsPage.verifyNoPartnerRepeatUntilAllMatched(roundsData);
     }
 
-    @Test(description = "Not to repeat the opponent for as long as possible in americano event should successful")
-    public void verify_make_sure_not_to_repeat_the_opponent_for_as_long_as_possible_in_americano_event_should_succeed() {
+    @Test(description = "Not to repeat the opponent for as long as possible in americano public event should successful")
+    public void verify_make_sure_not_to_repeat_the_opponent_for_as_long_as_possible_in_americano_public_event_should_succeed() {
         String searchKeyword = "test rounds";
         int totalRounds = 5;
 
@@ -191,8 +201,8 @@ public class PublicEventTest extends BaseTest {
         eventDetailsPage.verifyNoOpponentRepeat(roundsData);
     }
 
-    @Test(description = "Repeat the opponent with the least matches played in americano event should successful")
-    public void verify_repeat_the_opponent_with_the_least_matches_played_in_americano_event_should_succeed() {
+    @Test(description = "Repeat the opponent with the least matches played in americano public event should successful")
+    public void verify_repeat_the_opponent_with_the_least_matches_played_in_americano_public_event_should_succeed() {
         String searchKeyword = "test rounds";
         int totalRounds = 5;
 
@@ -210,8 +220,8 @@ public class PublicEventTest extends BaseTest {
         eventDetailsPage.verifyOpponentRepeatWithLeastPlayed(roundsData);
     }
 
-    @Test(description = "Do not play against player in consecutive rounds in americano event should successful")
-    public void verify_do_not_play_against_player_in_consecutive_rounds_in_americano_event_should_succeed() {
+    @Test(description = "Do not play against player in consecutive rounds in americano public event should successful")
+    public void verify_do_not_play_against_player_in_consecutive_rounds_in_americano_public_event_should_succeed() {
         String searchKeyword = "test rounds";
         int totalRounds = 5;
 
@@ -229,8 +239,8 @@ public class PublicEventTest extends BaseTest {
         eventDetailsPage.verifyNoConsecutiveOpponents(roundsData);
     }
 
-    @Test(description = "Not to repeat the opponent for as long as possible in maxicano event should successful")
-    public void verify_make_sure_not_to_repeat_the_opponent_for_as_long_as_possible_in_maxicano_event_should_succeed() {
+    @Test(description = "Not to repeat the opponent for as long as possible in maxicano public event should successful")
+    public void verify_make_sure_not_to_repeat_the_opponent_for_as_long_as_possible_in_maxicano_public_event_should_succeed() {
         String searchKeyword = "test rounds";
         int totalRounds = 5;
 
@@ -248,8 +258,8 @@ public class PublicEventTest extends BaseTest {
         eventDetailsPage.verifyNoOpponentRepeat(roundsData);
     }
 
-    @Test(description = "Repeat the opponent with the least matches played in maxicano event should successful")
-    public void verify_repeat_the_opponent_with_the_least_matches_played_in_maxicano_event_should_succeed() {
+    @Test(description = "Repeat the opponent with the least matches played in maxicano public event should successful")
+    public void verify_repeat_the_opponent_with_the_least_matches_played_in_maxicano_public_event_should_succeed() {
         String searchKeyword = "test rounds";
         int totalRounds = 5;
 
@@ -267,8 +277,8 @@ public class PublicEventTest extends BaseTest {
         eventDetailsPage.verifyOpponentRepeatWithLeastPlayed(roundsData);
     }
 
-    @Test(description = "Do not play against player in consecutive rounds in maxicano event should successful")
-    public void verify_do_not_play_against_player_in_consecutive_rounds_in_maxicano_event_should_succeed() {
+    @Test(description = "Do not play against player in consecutive rounds in maxicano public event should successful")
+    public void verify_do_not_play_against_player_in_consecutive_rounds_in_maxicano_public_event_should_succeed() {
         String searchKeyword = "test rounds";
         int totalRounds = 5;
 
