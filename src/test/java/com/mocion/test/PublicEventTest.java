@@ -220,8 +220,8 @@ public class PublicEventTest extends BaseTest {
         eventDetailsPage.verifyOpponentRepeatWithLeastPlayed(roundsData);
     }
 
-    @Test(description = "Do not play against player in consecutive rounds in americano public event should successful")
-    public void verify_do_not_play_against_player_in_consecutive_rounds_in_americano_public_event_should_succeed() {
+    @Test(description = "Not to play against player in consecutive rounds in americano public event should successful")
+    public void verify_not_to_play_against_player_in_consecutive_rounds_in_americano_public_event_should_succeed() {
         String searchKeyword = "test rounds";
         int totalRounds = 5;
 
@@ -277,8 +277,8 @@ public class PublicEventTest extends BaseTest {
         eventDetailsPage.verifyOpponentRepeatWithLeastPlayed(roundsData);
     }
 
-    @Test(description = "Do not play against player in consecutive rounds in maxicano public event should successful")
-    public void verify_do_not_play_against_player_in_consecutive_rounds_in_maxicano_public_event_should_succeed() {
+    @Test(description = "Not to play against player in consecutive rounds in maxicano public event should successful")
+    public void verify_not_to_play_against_player_in_consecutive_rounds_in_maxicano_public_event_should_succeed() {
         String searchKeyword = "test rounds";
         int totalRounds = 5;
 
