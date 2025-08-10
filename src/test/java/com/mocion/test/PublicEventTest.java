@@ -6,6 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.List;
+import java.util.Map;
+
 public class PublicEventTest extends BaseTest {
     public LoginPage loginPage;
     public HomePage homePage;
@@ -45,18 +48,8 @@ public class PublicEventTest extends BaseTest {
         Assert.assertTrue(successElement.isDisplayed());
     }
 
-    @Test(description = "Waiting list player get notification when event player cancel booking should successful")
-    public void verify_waiting_list_player_get_notification_when_event_player_cancel_booking_should_succeed() {
-        userLogin();
-        homePage
-                .clickNotificationIcon();
-
-        WebElement successElement = notificationPage.eventWaitingListNotificationLocator();
-        Assert.assertTrue(successElement.isDisplayed());
-    }
-
-    @Test(description = "The right buttons appear for the user depending on his status should successful")
-    public void verify_the_right_buttons_appear_for_the_user_depending_on_his_status_should_succeed() {
+    @Test(description = "Right buttons appear for the user depending on his status for public competitive event should successful")
+    public void verify_right_buttons_appear_for_the_user_depending_on_his_status_for_public_competitive_event_should_succeed() {
         String searchKeyword = "test rounds";
 
         initPages();
@@ -84,8 +77,8 @@ public class PublicEventTest extends BaseTest {
         Assert.assertTrue(successElementThree.isDisplayed());
     }
 
-    @Test(description = "Request to join waiting list for competitive public event should successful")
-    public void verify_request_to_join_waiting_list_for_competitive_public_event_should_succeed() {
+    @Test(description = "Request to join waiting list for public competitive event should successful")
+    public void verify_request_to_join_waiting_list_for_public_competitive_event_should_succeed() {
         String searchKeyword = "test rounds";
 
         initPages();
@@ -102,8 +95,8 @@ public class PublicEventTest extends BaseTest {
         Assert.assertTrue(successElement.isDisplayed());
     }
 
-    @Test(description = "Remove me from waiting list for competitive public event should successful")
-    public void verify_remove_me_from_waiting_list_for_competitive_public_event_should_succeed() {
+    @Test(description = "Remove me from waiting list for public competitive event should successful")
+    public void verify_remove_me_from_waiting_list_for_public_competitive_event_should_succeed() {
         String searchKeyword = "test rounds";
 
         initPages();
@@ -120,8 +113,8 @@ public class PublicEventTest extends BaseTest {
         Assert.assertTrue(successElement.isDisplayed());
     }
 
-    @Test(description = "Cancel competitive public event after join should successful")
-    public void verify_cancel_competitive_public_event_after_cancel_should_succeed() {
+    @Test(description = "Cancel public competitive event after join should successful")
+    public void verify_cancel_public_competitive_event_after_cancel_should_succeed() {
         String searchKeyword = "test rounds";
 
         initPages();
@@ -139,8 +132,8 @@ public class PublicEventTest extends BaseTest {
         Assert.assertTrue(successElement.isDisplayed());
     }
 
-    @Test(description = "Add player to event send notification should successful")
-    public void verify_add_player_to_event_send_notification_should_succeed() {
+    @Test(description = "Add player to public competitive event send notification should successful")
+    public void verify_add_player_to_public_competitive_event_send_notification_should_succeed() {
         initPages();
         userLogin();
         homePage
@@ -148,6 +141,83 @@ public class PublicEventTest extends BaseTest {
 
         WebElement successElement = notificationPage.addPlayerToEventNotificationLocator();
         Assert.assertTrue(successElement.isDisplayed());
+    }
+
+    @Test(description = "Waiting list player get notification when public competitive event player cancel booking should successful")
+    public void verify_waiting_list_player_get_notification_when_public_competitive_event_player_cancel_booking_should_succeed() {
+        userLogin();
+        homePage
+                .clickNotificationIcon();
+
+        WebElement successElement = notificationPage.eventWaitingListNotificationLocator();
+        Assert.assertTrue(successElement.isDisplayed());
+    }
+
+    @Test(description = "Waiting list player get notification when club admin remove player from public competitive event should successful")
+    public void verify_waiting_list_player_get_notification_when_club_admin_remove_player_from_public_competitive_event_should_succeed() {
+        userLogin();
+        homePage
+                .clickNotificationIcon();
+
+        WebElement successElement = notificationPage.eventWaitingListNotificationLocator();
+        Assert.assertTrue(successElement.isDisplayed());
+    }
+
+    @Test(description = "Player should not repeat a partner until they match with all other players in public competitive americano event should successful")
+    public void verify_player_should_not_repeat_a_partner_until_they_match_with_all_other_players_in_public_competitive_americano_event_should_succeed() {
+        String searchKeyword = "test rounds";
+        int totalRounds = 5;
+
+        initPages();
+        userLogin();
+        homePage
+                .selectCompetitive();
+        competitivePage
+                .fillSearchKeyword(searchKeyword)
+                .selectPublicEvent();
+        eventDetailsPage
+                .clickScheduleIcon();
+
+        Map<String, Map<String, List<List<String>>>> roundsData = eventDetailsPage.getAllRoundsData(totalRounds);
+        eventDetailsPage.verifyNoPartnerRepeatUntilAllMatched(roundsData);
+    }
+
+    @Test(description = "Not to repeat the opponent as long as possible in public competitive americano event should successful")
+    public void verify_not_to_repeat_the_opponent_as_long_as_possible_in_public_competitive_americano_event_should_succeed() {
+        String searchKeyword = "test rounds";
+        int totalRounds = 5;
+
+        initPages();
+        userLogin();
+        homePage
+                .selectCompetitive();
+        competitivePage
+                .fillSearchKeyword(searchKeyword)
+                .selectPublicEvent();
+        eventDetailsPage
+                .clickScheduleIcon();
+
+        Map<String, Map<String, List<List<String>>>> roundsData = eventDetailsPage.getAllRoundsData(totalRounds);
+        eventDetailsPage.verifyNoOpponentRepeat(roundsData);
+    }
+
+    @Test(description = "Repeat the opponent with the least matches played in public competitive americano event should successful")
+    public void verify_repeat_the_opponent_with_the_least_matches_played_in_public_competitive_americano_event_should_succeed() {
+        String searchKeyword = "test rounds";
+        int totalRounds = 5;
+
+        initPages();
+        userLogin();
+        homePage
+                .selectCompetitive();
+        competitivePage
+                .fillSearchKeyword(searchKeyword)
+                .selectPublicEvent();
+        eventDetailsPage
+                .clickScheduleIcon();
+
+        Map<String, Map<String, List<List<String>>>> roundsData = eventDetailsPage.getAllRoundsData(totalRounds);
+        eventDetailsPage.verifyOpponentRepeatWithLeastPlayed(roundsData);
     }
 
     private void userLogin() {
