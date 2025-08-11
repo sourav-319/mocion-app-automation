@@ -9,7 +9,8 @@
     "select_competitive": "ui:new UiSelector().description(\"Competitive\")",
     "select_friendly": "ui:new UiSelector().description(\"Friendly\")",
     "my_upcoming_bookings": "xpath://android.widget.ImageView[contains(@content-desc, 'View all')]",
-    "notification_icon": "ui:new UiSelector().className(\"android.widget.ImageView\").instance(3)"
+    "notification_icon": "ui:new UiSelector().className(\"android.widget.ImageView\").instance(3)",
+    "coaching_icon": "ui:new UiSelector().className(\"android.widget.ImageView\").instance(8)"
   },
   "booking_screen": {
     "game_type_friendly": "ui:new UiSelector().description(\"Friendly\")",
@@ -40,7 +41,8 @@
     "cvv_number_field": "ui:new UiSelector().className(\"android.widget.EditText\").instance(1)",
     "make_payment_button": "ui:new UiSelector().text(\"Make payment\")",
     "accept_payment_button": "ui:new UiSelector().text(\"Accept\")",
-    "payment_successful_locator": "ui:new UiSelector().description(\"Payment Successful\")"
+    "payment_successful_locator": "ui:new UiSelector().description(\"Payment Successful\")",
+    "academy_price_text": "ui:new UiSelector().textContains(\"5.17\")"
   },
   "competitive_screen": {
     "search_input_field": "ui:new UiSelector().className(\"android.widget.EditText\")",
@@ -73,5 +75,14 @@
   "notification_screen": {
     "add_player_to_event_notification": "ui:new UiSelector().className(\"android.view.View\").descriptionContains(\"Event Invitation Notification\").instance(0)",
     "event_waiting_list_notification": "ui:new UiSelector().className(\"android.view.View\").descriptionContains(\"Event Waiting List Notification\")"
+  },
+  "coaching_screen": {
+    "search_input_field": "ui:new UiSelector().className(\"android.widget.EditText\")",
+    "view_details_button": "ui:new UiSelector().description(\"View details\")"
+  },
+  "academy_details_screen": {
+    "subscribe_by_payment_button": "ui:new UiSelector().className(\"android.widget.Button\").index(21)",
+    "confirm_payment_info_button": "ui:new UiSelector().description(\"Confirm\")",
+    "academy_price_text": "ui:new UiSelector().description(\"5.0 AED (VAT included)\")"
   }
 }
