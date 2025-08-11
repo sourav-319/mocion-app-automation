@@ -100,7 +100,13 @@ public class BasePage {
     }
 
     public String getText(String screen, String locator) {
-        return findElement(screen, locator).getText();
+        WebElement element = findElement(screen, locator);
+        String text = element.getText();
+
+        if (text.trim().isEmpty()) {
+            text = element.getAttribute("contentDescription");
+        }
+        return text;
     }
 
     protected String getTitle() {

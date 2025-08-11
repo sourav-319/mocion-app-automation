@@ -39,4 +39,8 @@ public class PaymentPage extends BasePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+
+    public String getAcademyPriceText() {
+        return getText(PAYMENT_SCREEN, "academy_price_text");
+    }
 }
