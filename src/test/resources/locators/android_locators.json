@@ -1,0 +1,88 @@
+{
+  "login_screen": {
+    "email_field": "ui:new UiSelector().className(\"android.widget.EditText\").instance(0)",
+    "password_field": "ui:new UiSelector().className(\"android.widget.EditText\").instance(1)",
+    "next_button": "ui:new UiSelector().description(\"Next\")"
+  },
+  "home_screen": {
+    "select_match": "ui:new UiSelector().description(\"Match\")",
+    "select_competitive": "ui:new UiSelector().description(\"Competitive\")",
+    "select_friendly": "ui:new UiSelector().description(\"Friendly\")",
+    "my_upcoming_bookings": "xpath://android.widget.ImageView[contains(@content-desc, 'View all')]",
+    "notification_icon": "ui:new UiSelector().className(\"android.widget.ImageView\").instance(3)",
+    "coaching_icon": "ui:new UiSelector().className(\"android.widget.ImageView\").instance(8)"
+  },
+  "booking_screen": {
+    "game_type_friendly": "ui:new UiSelector().description(\"Friendly\")",
+    "game_type_competitive": "ui:new UiSelector().description(\"Competitive\")",
+    "game_type_dropdown": "ui:new UiSelector().description(\"Friendly\")",
+    "booking_type_dropdown": "ui:new UiSelector().description(\"public match\")",
+    "booking_type_public_match": "ui:new UiSelector().description(\"Public match\")",
+    "booking_type_private_match": "ui:new UiSelector().description(\"Private match\")",
+    "search_input_field": "ui:new UiSelector().className(\"android.widget.EditText\")",
+    "book_now_button": "ui:new UiSelector().description(\"Book Now\")",
+    "select_booking_date": "ui:new UiSelector().description(\"{{TOMORROW}}\")",
+    "select_booking_time": "ui:new UiSelector().description(\"12:00\")",
+    "court_dropdown": "ui:new UiSelector().className(\"android.widget.Button\").instance(0)",
+    "select_price": "ui:new UiSelector().className(\"android.view.View\").clickable(true).instance(20)",
+    "continue_button": "ui:new UiSelector().description(\"Continue\")"
+  },
+  "booking_details_screen": {
+    "confirm_payment_button": "xpath://android.widget.Button[@clickable='true' and @enabled='true']",
+    "cancel_booking_button": "ui:new UiSelector().description(\"Cancel Booking\")",
+    "yes_to_cancel_booking_button": "ui:new UiSelector().description(\"Yes\")",
+    "split_payment": "ui:new UiSelector().className(\"android.widget.RadioButton\").instance(0)",
+    "full_payment": "ui:new UiSelector().className(\"android.widget.RadioButton\").instance(1)",
+    "confirm_total_payment_button": "ui:new UiSelector().className(\"android.widget.Button\").instance(0)",
+    "confirm_booking_success_message": "ui:new UiSelector().className(\"android.view.View\").descriptionContains(\"Your booking is confirmed\")"
+  },
+  "payment_screen": {
+    "card_number_field": "ui:new UiSelector().className(\"android.widget.EditText\").instance(0)",
+    "cvv_number_field": "ui:new UiSelector().className(\"android.widget.EditText\").instance(1)",
+    "make_payment_button": "ui:new UiSelector().text(\"Make payment\")",
+    "accept_payment_button": "ui:new UiSelector().text(\"Accept\")",
+    "payment_successful_locator": "ui:new UiSelector().description(\"Payment Successful\")",
+    "academy_price_text": "ui:new UiSelector().textContains(\"5.17\")"
+  },
+  "competitive_screen": {
+    "search_input_field": "ui:new UiSelector().className(\"android.widget.EditText\")",
+    "select_tournament": "ui:new UiSelector().className(\"android.view.View\").clickable(true).instance(2)",
+    "click_tournaments": "ui:new UiSelector().description(\"Tournaments\")",
+    "select_public_event": "ui:new UiSelector().className(\"android.view.View\").clickable(true).instance(2)"
+  },
+  "friendly_screen": {
+    "search_input_field": "ui:new UiSelector().className(\"android.widget.EditText\")",
+    "select_tournament": "ui:new UiSelector().className(\"android.view.View\").clickable(true).instance(2)",
+    "click_tournaments": "ui:new UiSelector().description(\"Tournaments\")"
+  },
+  "tournaments_screen": {
+    "book_place_button": "ui:new UiSelector().description(\"Book place 10.0 AED\")",
+    "confirm_total_payment_button": "ui:new UiSelector().className(\"android.widget.Button\").clickable(true).instance(0)"
+  },
+  "my_bookings_screen": {
+    "select_booking": "ui:new UiSelector().className(\"android.view.View\").instance(8)"
+  },
+  "event_details_screen": {
+    "add_me_to_waiting_list_button": "ui:new UiSelector().description(\"Add me to waiting list\")",
+    "add_me_to_waiting_list_success_message": "ui:new UiSelector().description(\"Added to the waiting list successfully\")",
+    "cancel_inscription_button": "ui:new UiSelector().description(\"Cancel Inscription\")",
+    "yes_to_confirm_cancel_booking": "ui:new UiSelector().description(\"Yes\")",
+    "cancel_inscription_success_message": "ui:new UiSelector().description(\"Your booking canceled successfully\")",
+    "book_place_button": "ui:new UiSelector().className(\"android.widget.Button\").instance(0)",
+    "remove_me_from_waiting_list_button": "ui:new UiSelector().description(\"Remove me from waiting list\")",
+    "schedule_icon": "ui:new UiSelector().description(\"Schedule\")"
+  },
+  "notification_screen": {
+    "add_player_to_event_notification": "ui:new UiSelector().className(\"android.view.View\").descriptionContains(\"Event Invitation Notification\").instance(0)",
+    "event_waiting_list_notification": "ui:new UiSelector().className(\"android.view.View\").descriptionContains(\"Event Waiting List Notification\")"
+  },
+  "coaching_screen": {
+    "search_input_field": "ui:new UiSelector().className(\"android.widget.EditText\")",
+    "view_details_button": "ui:new UiSelector().description(\"View details\")"
+  },
+  "academy_details_screen": {
+    "subscribe_by_payment_button": "ui:new UiSelector().className(\"android.widget.Button\").index(21)",
+    "confirm_payment_info_button": "ui:new UiSelector().description(\"Confirm\")",
+    "academy_price_text": "ui:new UiSelector().description(\"5.0 AED (VAT included)\")"
+  }
+}
