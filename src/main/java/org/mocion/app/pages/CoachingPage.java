@@ -22,4 +22,8 @@ public class CoachingPage extends BasePage {
     public void clickViewDetailsButton() {
         click(COACHING_SCREEN, "view_details_button");
     }
+
+    public void clickBookNowButton() {
+        click(COACHING_SCREEN, "book_now_button");
+    }
 }
