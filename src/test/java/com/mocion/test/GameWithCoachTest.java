@@ -21,7 +21,7 @@ public class GameWithCoachTest extends BaseTest {
         bookingDetailsPage = new BookingDetailsPage(driver);
     }
 
-    @Test(description = "Verify player gets refund notification cancelling booking when payment method is cash or card should successful")
+    @Test(description = "Player gets refund notification cancelling booking when payment method is cash or card should successful")
     public void verify_player_gets_refund_notification_cancelling_booking_when_payment_method_is_cash_or_card_should_succeed() {
         initPages();
         userLogin();
@@ -39,7 +39,7 @@ public class GameWithCoachTest extends BaseTest {
         Assert.assertTrue(successElement.isDisplayed());
     }
 
-    @Test(description = "Verify player gets refund notification cancelling booking by admin when payment method is cash or card should successful")
+    @Test(description = "Player gets refund notification cancelling booking by admin when payment method is cash or card should successful")
     public void verify_player_gets_refund_notification_cancelling_booking_by_admin_when_payment_method_is_cash_or_card_should_succeed() {
         initPages();
         userLogin();
