@@ -32,4 +32,10 @@ public class NotificationPage extends BasePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+
+    public WebElement gameWithCoachRefundNotificationLocator() {
+        By locator = getLocator(NOTIFICATION_SCREEN, "game_with_coach_refund_notification");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
 }

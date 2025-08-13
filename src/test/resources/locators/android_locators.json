@@ -75,7 +75,8 @@
   "notification_screen": {
     "add_player_to_event_notification": "ui:new UiSelector().className(\"android.view.View\").descriptionContains(\"Event Invitation Notification\").instance(0)",
     "event_waiting_list_notification": "ui:new UiSelector().className(\"android.view.View\").descriptionContains(\"Event Waiting List Notification\")",
-    "academy_payment_reminder_notification": "ui:new UiSelector().descriptionContains(\"Player Payment Reminder before 10 min\")"
+    "academy_payment_reminder_notification": "ui:new UiSelector().descriptionContains(\"Player Payment Reminder before 10 min\")",
+    "game_with_coach_refund_notification": "ui:new UiSelector().descriptionContains(\"Contact The Club for Cash Refund\")"
   },
   "coaching_screen": {
     "search_input_field": "ui:new UiSelector().className(\"android.widget.EditText\")",
