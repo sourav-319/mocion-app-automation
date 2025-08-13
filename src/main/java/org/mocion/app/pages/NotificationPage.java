@@ -26,4 +26,10 @@ public class NotificationPage extends BasePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+
+    public WebElement academyPaymentReminderNotificationLocator() {
+        By locator = getLocator(NOTIFICATION_SCREEN, "academy_payment_reminder_notification");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
 }

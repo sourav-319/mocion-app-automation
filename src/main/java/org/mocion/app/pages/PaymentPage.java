@@ -34,13 +34,13 @@ public class PaymentPage extends BasePage {
         click(PaymentPage.PAYMENT_SCREEN, "accept_payment_button");
     }
 
+    public String getAcademyPriceText() {
+        return getText(PAYMENT_SCREEN, "academy_price_text");
+    }
+
     public WebElement waitForPaymentSuccessElement() {
         By locator = getLocator(PAYMENT_SCREEN, "payment_successful_locator");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
-
-    public String getAcademyPriceText() {
-        return getText(PAYMENT_SCREEN, "academy_price_text");
     }
 }
