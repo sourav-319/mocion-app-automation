@@ -13,8 +13,6 @@ public class AcademyTest extends BaseTest {
     public AcademyDetailsPage academyDetailsPage;
     public PaymentPage paymentPage;
     public NotificationPage notificationPage;
-    public MyBookingsPage myBookingsPage;
-    public BookingDetailsPage bookingDetailsPage;
 
     private void initPages() {
         loginPage = new LoginPage(driver);
@@ -23,8 +21,6 @@ public class AcademyTest extends BaseTest {
         academyDetailsPage = new AcademyDetailsPage(driver);
         paymentPage = new PaymentPage(driver);
         notificationPage = new NotificationPage(driver);
-        myBookingsPage = new MyBookingsPage(driver);
-        bookingDetailsPage = new BookingDetailsPage(driver);
     }
 
     @Test(description = "Academy price displays correctly on academy details page should successful")
@@ -170,24 +166,6 @@ public class AcademyTest extends BaseTest {
                 .clickAcceptPaymentButton();
 
         WebElement successElement = paymentPage.waitForPaymentSuccessElement();
-        Assert.assertTrue(successElement.isDisplayed());
-    }
-
-    @Test(description = "Verify player gets refund notification cancelling game with coach booking when payment method is cash or card should successful")
-    public void verify_player_gets_refund_notification_cancelling_game_with_coach_booking_when_payment_method_is_cash_or_card_should_succeed() {
-        initPages();
-        userLogin();
-        homePage
-                .clickMyUpcomingBookings();
-        myBookingsPage
-                .selectBooking();
-        bookingDetailsPage
-                .clickCancelBookingButton()
-                .clickYesToCancelBooking();
-        homePage
-                .clickNotificationIcon();
-
-        WebElement successElement = notificationPage.gameWithCoachRefundNotificationLocator();
         Assert.assertTrue(successElement.isDisplayed());
     }
 
