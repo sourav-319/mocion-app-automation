@@ -9,7 +9,7 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    public void selectMatch() {
+    public void selectBookMatch() {
         click(HOME_SCREEN, "select_book_match");
     }
 

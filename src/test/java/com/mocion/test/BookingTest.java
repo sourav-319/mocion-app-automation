@@ -30,7 +30,7 @@ public class BookingTest extends BaseTest {
         initPages();
         userLogin();
         homePage
-                .selectMatch();
+                .selectBookMatch();
         bookingPage
                 .fillSearchKeyword(searchKeyword)
                 .clickBookNowButton()
@@ -59,7 +59,7 @@ public class BookingTest extends BaseTest {
         initPages();
         userLogin();
         homePage
-                .selectMatch();
+                .selectBookMatch();
         bookingPage
                 .fillSearchKeyword(searchKeyword)
                 .clickBookNowButton()
@@ -88,7 +88,7 @@ public class BookingTest extends BaseTest {
         initPages();
         userLogin();
         homePage
-                .selectMatch();
+                .selectBookMatch();
         bookingPage
                 .fillSearchKeyword(searchKeyword)
                 .clickBookNowButton()
@@ -118,7 +118,7 @@ public class BookingTest extends BaseTest {
         initPages();
         userLogin();
         homePage
-                .selectMatch();
+                .selectBookMatch();
         bookingPage
                 .fillSearchKeyword(searchKeyword)
                 .clickBookNowButton()
@@ -148,7 +148,7 @@ public class BookingTest extends BaseTest {
         initPages();
         userLogin();
         homePage
-                .selectMatch();
+                .selectBookMatch();
         bookingPage
                 .fillSearchKeyword(searchKeyword)
                 .clickBookNowButton()
@@ -179,7 +179,7 @@ public class BookingTest extends BaseTest {
         initPages();
         userLogin();
         homePage
-                .selectMatch();
+                .selectBookMatch();
         bookingPage
                 .fillSearchKeyword(searchKeyword)
                 .clickBookNowButton()

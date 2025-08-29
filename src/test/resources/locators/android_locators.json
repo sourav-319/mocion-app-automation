@@ -13,18 +13,18 @@
     "select_coaching": "ui:new UiSelector().description(\"Coaching\")"
   },
   "booking_screen": {
-    "game_type_friendly": "ui:new UiSelector().description(\"Friendly\")",
-    "game_type_competitive": "ui:new UiSelector().description(\"Competitive\")",
-    "game_type_dropdown": "ui:new UiSelector().description(\"Friendly\")",
-    "booking_type_dropdown": "ui:new UiSelector().description(\"public match\")",
-    "booking_type_public_match": "ui:new UiSelector().description(\"Public match\")",
+    "game_type_friendly": "xpath://android.widget.Button[@content-desc=\"Friendly\"]",
+    "game_type_competitive": "xpath://android.widget.Button[@content-desc=\"Competitive\"]",
+    "game_type_dropdown": "xpath://android.widget.ImageView[@content-desc=\"Friendly\"]",
+    "booking_type_dropdown": "xpath://android.widget.ImageView[@content-desc=\"Public match\"]",
+    "booking_type_public_match": "xpath://android.widget.Button[@content-desc=\"Public match\"]",
     "booking_type_private_match": "ui:new UiSelector().description(\"Private match\")",
     "search_input_field": "ui:new UiSelector().className(\"android.widget.EditText\")",
-    "book_now_button": "ui:new UiSelector().description(\"Book Now\")",
+    "book_now_button": "ui:new UiSelector().description(\"Book now\")",
     "select_booking_date": "ui:new UiSelector().description(\"{{TOMORROW}}\")",
     "select_booking_time": "ui:new UiSelector().description(\"12:00\")",
     "court_dropdown": "ui:new UiSelector().className(\"android.widget.Button\").instance(0)",
-    "select_price": "ui:new UiSelector().className(\"android.view.View\").clickable(true).instance(20)",
+    "select_price": "xpath:(//android.view.View[contains(@content-desc, \"AED\")])[1]",
     "continue_button": "ui:new UiSelector().description(\"Continue\")"
   },
   "booking_details_screen": {
