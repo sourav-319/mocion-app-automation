@@ -12,6 +12,10 @@ public class CoachingTest extends BaseTest {
     public NotificationPage notificationPage;
     public MyBookingsPage myBookingsPage;
     public BookingDetailsPage bookingDetailsPage;
+    public CoachingPage coachingPage;
+    public CoachDetailsPage coachingDetailsPage;
+    public PackageDetailsPage packageDetailsPage;
+    public PaymentPage paymentPage;
 
     private void initPages() {
         loginPage = new LoginPage(driver);
@@ -19,6 +23,10 @@ public class CoachingTest extends BaseTest {
         notificationPage = new NotificationPage(driver);
         myBookingsPage = new MyBookingsPage(driver);
         bookingDetailsPage = new BookingDetailsPage(driver);
+        coachingPage = new CoachingPage(driver);
+        coachingDetailsPage = new CoachDetailsPage(driver);
+        packageDetailsPage = new PackageDetailsPage(driver);
+        paymentPage = new PaymentPage(driver);
     }
 
     @Test(description = "Player gets refund notification cancelling booking when payment method is cash or card should successful")
@@ -47,6 +55,62 @@ public class CoachingTest extends BaseTest {
                 .clickNotificationIcon();
 
         WebElement successElement = notificationPage.gameWithCoachRefundNotificationLocator();
+        Assert.assertTrue(successElement.isDisplayed());
+    }
+
+    @Test(description = "Buying private indoor coaching package should successful")
+    public void verify_buying_private_indoor_coaching_package_should_succeed() {
+        String searchKeyword = "new ch";
+
+        initPages();
+        userLogin();
+        homePage
+                .selectCoaching();
+        coachingPage
+                .selectCoaches()
+                .fillSearchKeyword(searchKeyword)
+                .clickBuyAPackageButton();
+        coachingDetailsPage
+                .selectBookingTypePrivateCoachingPackage()
+                .selectCourtTypeIndoor()
+                .clickBuyNowButton();
+        packageDetailsPage
+                .clickBuyNowButton();
+        paymentPage
+                .fillCardNumber(ConfigReader.get("card_number"))
+                .fillCVVNumber(ConfigReader.get("cvv_number"))
+                .clickMakePaymentButton()
+                .clickAcceptPaymentButton();
+
+        WebElement successElement = paymentPage.waitForPaymentSuccessElement();
+        Assert.assertTrue(successElement.isDisplayed());
+    }
+
+    @Test(description = "Buying private outdoor coaching package should successful")
+    public void verify_buying_private_outdoor_coaching_package_should_succeed() {
+        String searchKeyword = "new ch";
+
+        initPages();
+        userLogin();
+        homePage
+                .selectCoaching();
+        coachingPage
+                .selectCoaches()
+                .fillSearchKeyword(searchKeyword)
+                .clickBuyAPackageButton();
+        coachingDetailsPage
+                .selectBookingTypePrivateCoachingPackage()
+                .selectCourtTypeOutdoor()
+                .clickBuyNowButton();
+        packageDetailsPage
+                .clickBuyNowButton();
+        paymentPage
+                .fillCardNumber(ConfigReader.get("card_number"))
+                .fillCVVNumber(ConfigReader.get("cvv_number"))
+                .clickMakePaymentButton()
+                .clickAcceptPaymentButton();
+
+        WebElement successElement = paymentPage.waitForPaymentSuccessElement();
         Assert.assertTrue(successElement.isDisplayed());
     }
 

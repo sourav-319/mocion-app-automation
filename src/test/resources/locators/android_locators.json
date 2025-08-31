@@ -89,7 +89,9 @@
   "coaching_screen": {
     "search_input_field": "ui:new UiSelector().className(\"android.widget.EditText\")",
     "view_details_button": "ui:new UiSelector().description(\"View details\")",
-    "book_now_button": "ui:new UiSelector().description(\"Book now\").instance(0)"
+    "book_now_button": "ui:new UiSelector().description(\"Book now\").instance(0)",
+    "coaches_button": "ui:new UiSelector().description(\"Coaches\")",
+    "buy_a_package_button": "ui:new UiSelector().description(\"Buy a package\").instance(0)"
   },
   "academy_details_screen": {
     "subscribe_by_payment_button": "ui:new UiSelector().className(\"android.widget.Button\").index(21)",
@@ -97,5 +99,15 @@
     "academy_price_text": "ui:new UiSelector().description(\"5.0 AED (VAT included)\")",
     "players_list_locator": "ui:new UiSelector().className(\"android.view.View\").instance(21)",
     "cancel_academy_subscription_button": "ui:new UiSelector().description(\"Cancel academy subscription\")"
+  },
+  "coach_details_screen": {
+    "booking_type_dropdown": "xpath://android.widget.ImageView[@content-desc=\"Private coaching package\"]",
+    "booking_type_private_coaching_package": "xpath://android.widget.Button[@content-desc=\"Private coaching package\"]",
+    "court_type_indoor": "ui:new UiSelector().descriptionContains(\"Indoor\").instance(0)",
+    "buy_now_button": "ui:new UiSelector().description(\"Buy now\")",
+    "court_type_outdoor": "ui:new UiSelector().descriptionContains(\"Outdoor\").instance(0)"
+  },
+  "package_details_screen": {
+    "buy_now_button": "ui:new UiSelector().description(\"Buy now\")"
   }
 }
